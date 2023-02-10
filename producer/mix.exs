@@ -12,11 +12,13 @@ defmodule Producer.MixProject do
   end
 
   # Run "mix help compile.app" to learn about applications.
+  # Step 3: Monitor the system processes from the producer using an OS monitoring application known as os_mon.
+  # added os_mon to extra_applications
   def application do
-    [
-      extra_applications: [:logger, :kaffe],
-      mod: {Producer.Application, []}
-    ]
+  [
+    extra_applications: [:logger, :kaffe, :os_mon],
+    mod: {Producer.Application, []}
+  ]
   end
 
   # Run "mix help deps" to learn about dependencies.
